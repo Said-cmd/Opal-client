@@ -2,8 +2,8 @@ import React from "react";
 
 function Login() {
     return(
-    <div>
-    <form>
+    <div className="login-holder">
+    <form className="login-form">
         <input 
         type="text"
         name="username"
