@@ -1,12 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { red } from '@mui/material/colors';
 import Login from './Login';
 import Account from "./Account";
 import AddTransaction from "./AddTransaction";
 import About from "./About";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#1565c0"
+    },
+    secondary: red
+  },
+  typography: {
+    fontFamily: 'Montserrat',
+  }
+})
+
 function App() {
   return (
+    <ThemeProvider theme={theme}>
       <Router>
         <Switch>
       <Route exact path="/">
@@ -23,7 +38,7 @@ function App() {
         </Route>
       </Switch>
       </Router>
-
+      </ThemeProvider>
   );
 }
 
