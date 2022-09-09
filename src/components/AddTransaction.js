@@ -11,6 +11,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
     field: {
@@ -22,9 +23,10 @@ const useStyles = makeStyles({
 
 function AddTransaction() { 
     const classes = useStyles()
+    const history = useHistory()
     const [date, setDate] = useState(null);
     const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('general');
+    const [category, setCategory] = useState('General');
     const [amount, setAmount] = useState('')
     const [dateError, setDateError] = useState(false);
     const [descriptionError, setDescriptionError] = useState(false);
@@ -52,7 +54,13 @@ function AddTransaction() {
             setAmountError(true)
         }
         if (date && description && amount && category) {
-            console.log(date, description, amount, category)
+            fetch('http://localhost:8000/transactions', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ date, description, amount, category})
+            }).then(() => history.push('/account'))
         }
     }
      return(
@@ -94,7 +102,7 @@ function AddTransaction() {
             required
             fullWidth
             multiline
-            minRows={5}
+            minRows={4}
             onChange={(e) => setDescription(e.target.value)}
             error={descriptionError}
             >
@@ -127,13 +135,14 @@ function AddTransaction() {
             error={categoryError}
             required
             >
-            <FormControlLabel value="general" control={<Radio />} label="General 🔩"/>
-            <FormControlLabel value="income" control={<Radio />} label="Income 💰"/>
-            <FormControlLabel value="bills" control={<Radio />} label="Bills 💡"/>
-            <FormControlLabel value="entertainment/leisure" control={<Radio />} label="Entertainment and Lesiure 🏖"/>
-            <FormControlLabel value="savings" control={<Radio />} label="Savings 🌱"/>
-            <FormControlLabel value="shopping" control={<Radio />} label="Shopping 🛍"/>
-            <FormControlLabel value="transport" control={<Radio />} label="Transport 🚗"/>
+            <FormControlLabel value="General" control={<Radio />} label="General 🔩"/>
+            <FormControlLabel value="Income" control={<Radio />} label="Income 💰"/>
+            <FormControlLabel value="Food" control={<Radio />} label="Food 🍽"/>
+            <FormControlLabel value="Entertainment/Leisure" control={<Radio />} label="Entertainment and Lesiure 🏖"/>
+            <FormControlLabel value="Savings" control={<Radio />} label="Savings 🌱"/>
+            <FormControlLabel value="Shopping" control={<Radio />} label="Shopping 🛍"/>
+            <FormControlLabel value="Transport" control={<Radio />} label="Transport 🚗"/>
+            <FormControlLabel value="Bills" control={<Radio />} label="Bills 💡"/>
             </RadioGroup>
             </FormControl>
             <Button
@@ -148,4 +157,3 @@ function AddTransaction() {
      );
 }
 export default AddTransaction;
-

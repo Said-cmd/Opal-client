@@ -1,0 +1,109 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "date": "03-01-2022",
+      "description": "Paycheck from Bob's Burgers",
+      "category": "Income",
+      "amount": 1000
+    },
+    {
+      "id": 2,
+      "date": "07-01-2022",
+      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
+      "category": "Food",
+      "amount": -10.55
+    },
+    {
+      "id": 3,
+      "date": "11-01-2022",
+      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
+      "category": "Food",
+      "amount": -10.55
+    },
+    {
+      "id": 4,
+      "date": "14-01-2022",
+      "description": "Sunglasses, Urban Outfitters",
+      "category": "Shopping",
+      "amount": -24.99
+    },
+    {
+      "id": 5,
+      "date": "05-02-2022",
+      "description": "Venmo, Alice Pays you for Burrito",
+      "category": "Food",
+      "amount": 8.75
+    },
+    {
+      "id": 6,
+      "date": "06-02-2022",
+      "description": "Chipotle",
+      "category": "Food",
+      "amount": -17.59
+    },
+    {
+      "id": 7,
+      "date": "10-02-2022",
+      "description": "Birthday Check from Grandma",
+      "category": "General",
+      "amount": 50
+    },
+    {
+      "id": 8,
+      "date": "15-02-2022",
+      "description": "Lyft Ride",
+      "category": "Transport",
+      "amount": -13.25
+    },
+    {
+      "id": 9,
+      "date": "17-02-2022",
+      "description": "Paycheck from Bob's Burgers",
+      "category": "Income",
+      "amount": 1000
+    },
+    {
+      "id": 10,
+      "date": "20-05-2022",
+      "description": "Tickets, Flatiron Multiplex Cinemas",
+      "category": "Entertainment/Leisure",
+      "amount": -24
+    },
+    {
+      "id": 11,
+      "date": "09-09-2022",
+      "description": "MTA Vending Machine: MetroCard",
+      "category": "Transport",
+      "amount": -116.39
+    },
+    {
+      "date": "2022-09-09T15:40:00.000Z",
+      "description": "Sprite at Doppio",
+      "amount": "100",
+      "category": "Food",
+      "id": 12
+    },
+    {
+      "date": "2022-09-09T15:40:47.260Z",
+      "description": "Tea at Doppio",
+      "amount": "180",
+      "category": "Food",
+      "id": 13
+    },
+    {
+      "date": "2022-09-09T16:01:08.559Z",
+      "description": "Coffee at Doppio",
+      "amount": "230",
+      "category": "Food",
+      "id": 14
+    },
+    {
+      "date": "2022-09-09T17:48:48.974Z",
+      "description": "Chai Latte at ArtCaffe",
+      "amount": "310",
+      "category": "Food",
+      "id": 15
+    }
+  ]
+}

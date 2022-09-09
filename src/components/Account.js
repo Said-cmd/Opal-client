@@ -5,7 +5,6 @@ import TransactionList from "./TransactionList";
 function Account() {
     return (
         <div>
-            <Search />
             <TransactionList />
         </div>
     )
