@@ -19,7 +19,7 @@ function Transaction({ date, description, amount, category, id, transactions, se
       setTransactions(revisedTransactions)
     })
   }
-
+  
    return (
           <TableRow>
             <TableCell>{date}</TableCell>

@@ -56,6 +56,16 @@ function TransactionList() {
             >
               Category
             </TableCell>
+            <TableCell
+            align='right'
+            >
+              Update Transaction
+            </TableCell>
+            <TableCell
+            align='right'
+            >
+              Delete Transaction
+            </TableCell>
           </TableRow>
         {transactionList}
       </TableBody>
