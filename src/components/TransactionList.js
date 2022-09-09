@@ -28,6 +28,9 @@ function TransactionList() {
     description={transaction.description}
     amount={transaction.amount}
     category={transaction.category}
+    id={transaction.id}
+    transactions={transactions}
+    setTransactions={setTransactions}
     />
   })
 
