@@ -1,6 +1,6 @@
 import React from "react";
-import Search from "./Search";
-import TransactionList from "./TransactionList";
+import Search from "../components/Search";
+import TransactionList from "../components/TransactionList";
 
 function Account() {
     return (
