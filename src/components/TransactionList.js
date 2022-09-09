@@ -1,4 +1,4 @@
-import { TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
+import { TableBody, TableCell, TableRow } from '@material-ui/core'
 import Table from '@material-ui/core/Table'
 import React, { useState, useEffect } from 'react'
 import Transaction from './Transaction'

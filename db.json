@@ -104,6 +104,13 @@
       "amount": "310",
       "category": "Food",
       "id": 15
+    },
+    {
+      "date": "2022-09-09T20:21:06.756Z",
+      "description": "Uber home from Kilileshwa",
+      "amount": "220",
+      "category": "Transport",
+      "id": 16
     }
   ]
 }
