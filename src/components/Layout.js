@@ -64,7 +64,7 @@ function Layout({ children }) {
         <AppBar
         className={classes.appbar}
         elevation={0}
-        style={{ background: '#ffffff', textColor: "#000000" }}
+        style={{ background: '#ffffff', color: "#000000"}}
         >
             <Toolbar>
                 <Typography>
