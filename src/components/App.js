@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { createTheme, ThemeProvider } from '@material-ui/core';
+import { red } from '@material-ui/core/colors';
 import Login from './Login';
 import Account from "./Account";
 import AddTransaction from "./AddTransaction";
@@ -20,7 +20,7 @@ const theme = createTheme({
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightBold: 700
-  }
+  }, 
 })
 
 function App() {
