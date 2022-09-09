@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import { makeStyles } from "@material-ui/core";
+import { FormControlLabel, makeStyles } from "@material-ui/core";
 import DateFnsUtils from '@date-io/date-fns';
 import 'date-fns';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import TextField from '@material-ui/core/TextField';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
 
 const useStyles = makeStyles({
     field: {
@@ -20,7 +24,7 @@ function AddTransaction() {
     const classes = useStyles()
     const [date, setDate] = useState(null);
     const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState('general');
     const [amount, setAmount] = useState('')
     const [dateError, setDateError] = useState(false);
     const [descriptionError, setDescriptionError] = useState(false);
@@ -47,8 +51,8 @@ function AddTransaction() {
         if (amount == '') {
             setAmountError(true)
         }
-        if (date && description && category && amount) {
-            console.log(date, description, category, amount)
+        if (date && description && amount && category) {
+            console.log(date, description, amount, category)
         }
     }
      return(
@@ -97,18 +101,6 @@ function AddTransaction() {
             </TextField>
             <TextField
             className={classes.field}
-            data-lpignore="true"
-            label="Category"
-            variant="outlined"
-            color="secondary"
-            required
-            fullWidth
-            onChange={(e) => setCategory(e.target.value)}
-            error={categoryError}
-            >
-            </TextField>
-            <TextField
-            className={classes.field}
             fullWidth
             label="Amount"
             required
@@ -123,10 +115,31 @@ function AddTransaction() {
             onChange={(e)=> setAmount(e.target.value)}
             error={amountError}
             />
+            <FormControl
+            className={classes.field}
+            required
+            color="secondary"
+            >
+            <FormLabel>Category</FormLabel>
+            <RadioGroup
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            error={categoryError}
+            required
+            >
+            <FormControlLabel value="general" control={<Radio />} label="General 🔩"/>
+            <FormControlLabel value="income" control={<Radio />} label="Income 💰"/>
+            <FormControlLabel value="bills" control={<Radio />} label="Bills 💡"/>
+            <FormControlLabel value="entertainment/leisure" control={<Radio />} label="Entertainment and Lesiure 🏖"/>
+            <FormControlLabel value="savings" control={<Radio />} label="Savings 🌱"/>
+            <FormControlLabel value="shopping" control={<Radio />} label="Shopping 🛍"/>
+            <FormControlLabel value="transport" control={<Radio />} label="Transport 🚗"/>
+            </RadioGroup>
+            </FormControl>
             <Button
             type="submit"
             variant="contained"
-            color="secondary"
+            color="secondary" 
             >
                 Submit
             </Button>
