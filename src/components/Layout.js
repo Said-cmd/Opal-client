@@ -75,42 +75,42 @@ function Layout({ children }) {
         {
             text: "General 🔩",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account"
+            path: "/general"
         },
         {
             text: "Income 💰",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account" 
+            path: "/income" 
         },
         {
             text: "Food 🍽",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account"
+            path: "/food"
         },
         {
             text: "Entertainment and Leisure 🏖",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account"
+            path: "/entertainment/leisure"
         },
         {
             text: "Savings 🌱",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account"
+            path: "/savings"
         },
         {
             text:  "Shopping 🛍",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account" 
+            path: "/shopping" 
         },
         {
             text: "Transport 🚗",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account"
+            path: "/transport"
         },
         {
             text: "Bills 💡",
             icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
-            path: "/account"
+            path: "/bills"
         }
     ]
 

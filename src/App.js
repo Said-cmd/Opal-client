@@ -7,6 +7,14 @@ import Account from "./pages/Account";
 import AddTransaction from "./pages/AddTransaction";
 import About from "./pages/About";
 import Layout from './components/Layout';
+import Bills from './pages/categories/Bills';
+import EntertainmentAndLeisure from './pages/categories/EntertainmentAndLeisure';
+import Food from './pages/categories/Food';
+import General from './pages/categories/General';
+import Income from './pages/categories/Income';
+import Savings from './pages/categories/Savings';
+import Shopping from './pages/categories/Shopping';
+import Transport from './pages/categories/Transport';
 
 const theme = createTheme({
   palette: {
@@ -42,6 +50,30 @@ function App() {
       </Route>
       <Route exact path="/about">
         <About />
+        </Route>
+        <Route exact path="/general">
+          <General />
+        </Route>
+        <Route exact path="/income">
+          <Income />
+        </Route>
+        <Route exact path="/food">
+          <Food />
+        </Route>
+        <Route exact path="/entertainment/leisure">
+          <EntertainmentAndLeisure />
+        </Route>
+        <Route exact path="/savings">
+          <Savings />
+        </Route>
+        <Route exact path="/shopping">
+          <Shopping />
+        </Route>
+        <Route exact path="/transport">
+          <Transport />
+        </Route>
+        <Route exact path="/bills">
+          <Bills />
         </Route>
       </Switch>
       </Layout>

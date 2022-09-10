@@ -111,6 +111,27 @@
       "amount": "220",
       "category": "Transport",
       "id": 16
+    },
+    {
+      "date": "2022-09-10T15:33:55.495Z",
+      "description": "Money in Monzo pot",
+      "amount": "3000",
+      "category": "Savings",
+      "id": 17
+    },
+    {
+      "date": "2022-09-10T16:02:28.766Z",
+      "description": "September's Rent",
+      "amount": "100,000",
+      "category": "Bills",
+      "id": 18
+    },
+    {
+      "date": "2022-09-10T16:08:47.689Z",
+      "description": "Cooking gas",
+      "amount": "250",
+      "category": "Bills",
+      "id": 19
     }
   ]
 }
