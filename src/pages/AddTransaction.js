@@ -138,7 +138,7 @@ function AddTransaction() {
             <FormControlLabel value="General" control={<Radio />} label="General 🔩"/>
             <FormControlLabel value="Income" control={<Radio />} label="Income 💰"/>
             <FormControlLabel value="Food" control={<Radio />} label="Food 🍽"/>
-            <FormControlLabel value="Entertainment/Leisure" control={<Radio />} label="Entertainment and Lesiure 🏖"/>
+            <FormControlLabel value="Entertainment/Leisure" control={<Radio />} label="Entertainment and Leisure 🏖"/>
             <FormControlLabel value="Savings" control={<Radio />} label="Savings 🌱"/>
             <FormControlLabel value="Shopping" control={<Radio />} label="Shopping 🛍"/>
             <FormControlLabel value="Transport" control={<Radio />} label="Transport 🚗"/>

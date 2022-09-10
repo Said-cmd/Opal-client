@@ -1,15 +1,18 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Collapse, makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
+import { AddCircleOutlineOutlined, ExpandLess, ExpandMore } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from '@material-ui/core/Toolbar';
+import ListIcon from '@material-ui/icons/List';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 
 const drawerWidth = 240
 
@@ -30,7 +33,7 @@ const useStyles = makeStyles((theme) => {
         display: 'flex'
     },
     active: {
-        background: "#f4f4f4"
+        background: "#f8bbd0"
     },
     title: {
         padding: theme.spacing(2)
@@ -38,7 +41,10 @@ const useStyles = makeStyles((theme) => {
     appbar: {
             width: `calc(100 - ${drawerWidth}px)`
             },
-    toolbar: theme.mixins.toolbar
+    toolbar: theme.mixins.toolbar,
+    nested: {
+        paddingLeft: theme.spacing(4),
+      }
   }
 }) 
 
@@ -46,10 +52,16 @@ function Layout({ children }) {
     const classes = useStyles()
     const history = useHistory()
     const location = useLocation()
+    const [open, setOpen] = useState(false);
+
+    const handleClick = () => {
+        setOpen(!open);
+    }
+
     const sideBarItems = [
         {
             text: "My Transactions",
-            icon: <SubjectOutlined color="secondary" />,
+            icon: <AccountBalanceIcon color="secondary" />,
             path: "/account"
         },
         {
@@ -57,6 +69,49 @@ function Layout({ children }) {
             icon: <AddCircleOutlineOutlined color="secondary" />,
             path: "/addtransaction"
         }, 
+    ]
+
+    const transactionCategories = [
+        {
+            text: "General 🔩",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account"
+        },
+        {
+            text: "Income 💰",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account" 
+        },
+        {
+            text: "Food 🍽",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account"
+        },
+        {
+            text: "Entertainment and Leisure 🏖",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account"
+        },
+        {
+            text: "Savings 🌱",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account"
+        },
+        {
+            text:  "Shopping 🛍",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account" 
+        },
+        {
+            text: "Transport 🚗",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account"
+        },
+        {
+            text: "Bills 💡",
+            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            path: "/account"
+        }
     ]
 
   return (
@@ -83,7 +138,7 @@ function Layout({ children }) {
                 variant="h5"
                 className={classes.title}
                 >
-                    Transactions
+                    Opal
                 </Typography>
             </div>
             <List>
@@ -98,6 +153,29 @@ function Layout({ children }) {
                     <ListItemText primary={item.text} />
                     </ListItem>
                 ))}
+            <ListItem button onClick={handleClick}>
+                <ListItemIcon>
+                    <ListIcon />
+                </ListItemIcon>
+            <ListItemText primary="Transaction Categories">
+                    {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItemText>
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                {transactionCategories.map(item => (
+                    <ListItem
+                    key={item.text}
+                    button
+                    onClick={() => history.push(item.path)}
+                    className={location.pathname == item.path ? classes.active : null}
+                    >
+                    <ListItemIcon>{ item.icon }</ListItemIcon>
+                    <ListItemText primary={item.text} />
+                    </ListItem>
+                ))} 
+                </List>
+            </Collapse>
             </List>
         </Drawer>
         <div className={classes.page}>
