@@ -30,10 +30,10 @@
     },
     {
       "id": 5,
-      "date": "05-02-2022",
-      "description": "Venmo, Alice Pays you for Burrito",
-      "category": "Food",
-      "amount": 8.75
+      "date": "21-01-2022",
+      "description": "M-PESA sent from Nelson",
+      "category": "General",
+      "amount": "2000"
     },
     {
       "id": 6,
@@ -139,13 +139,6 @@
       "amount": "180",
       "category": "Food",
       "id": 20
-    },
-    {
-      "date": "2022-09-10T17:58:54.113Z",
-      "description": "Chicken Pie at Doppio",
-      "amount": "280",
-      "category": "Food",
-      "id": 21
     }
   ]
 }
