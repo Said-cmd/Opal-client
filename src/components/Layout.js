@@ -8,11 +8,16 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { AddCircleOutlineOutlined, ExpandLess, ExpandMore } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from '@material-ui/core/Toolbar';
 import ListIcon from '@material-ui/icons/List';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+import LocalFloristIcon from '@material-ui/icons/LocalFlorist';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import CommuteIcon from '@material-ui/icons/Commute';
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 
 const drawerWidth = 240
 
@@ -49,7 +54,7 @@ function Layout({ children }) {
     const classes = useStyles()
     const history = useHistory()
     const location = useLocation()
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     const handleClick = () => {
         setOpen(!open);
@@ -70,43 +75,43 @@ function Layout({ children }) {
 
     const transactionCategories = [
         {
-            text: "General 🔩",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text: "General",
+            icon: <AccountTreeIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/general"
         },
         {
-            text: "Income 💰",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text: "Income",
+            icon: <MonetizationOnIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/income" 
         },
         {
-            text: "Food 🍽",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text: "Food",
+            icon: <FastfoodIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/food"
         },
         {
-            text: "Entertainment and Leisure 🏖",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text: "Entertainment and Leisure",
+            icon: <SportsEsportsIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/entertainment/leisure"
         },
         {
-            text: "Savings 🌱",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text: "Savings",
+            icon: <LocalFloristIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/savings"
         },
         {
-            text:  "Shopping 🛍",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text:  "Shopping",
+            icon: <ShoppingCartIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/shopping" 
         },
         {
-            text: "Transport 🚗",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text: "Transport",
+            icon: <CommuteIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/transport"
         },
         {
-            text: "Bills 💡",
-            icon: <FiberManualRecordIcon color="secondary" style={{ fontSize: 15 }}/>,
+            text: "Bills",
+            icon: <EmojiObjectsIcon color="secondary" style={{ fontSize: 20 }}/>,
             path: "/bills"
         }
     ]
@@ -141,7 +146,7 @@ function Layout({ children }) {
                 ))}
             <ListItem button onClick={handleClick}>
                 <ListItemIcon>
-                    <ListIcon />
+                    <ListIcon color="secondary" />
                 </ListItemIcon>
             <ListItemText primary="Transaction Categories">
                     {open ? <ExpandLess /> : <ExpandMore />}

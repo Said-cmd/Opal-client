@@ -132,6 +132,20 @@
       "amount": "250",
       "category": "Bills",
       "id": 19
+    },
+    {
+      "date": "2022-09-10T17:34:58.687Z",
+      "description": "Masala Chai at Doppio",
+      "amount": "180",
+      "category": "Food",
+      "id": 20
+    },
+    {
+      "date": "2022-09-10T17:58:54.113Z",
+      "description": "Chicken Pie at Doppio",
+      "amount": "280",
+      "category": "Food",
+      "id": 21
     }
   ]
 }
