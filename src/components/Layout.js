@@ -38,9 +38,6 @@ const useStyles = makeStyles((theme) => {
     title: {
         padding: theme.spacing(2)
     },
-    appbar: {
-            width: `calc(100 - ${drawerWidth}px)`
-            },
     toolbar: theme.mixins.toolbar,
     nested: {
         paddingLeft: theme.spacing(4),
@@ -116,17 +113,6 @@ function Layout({ children }) {
 
   return (
     <div className={classes.root}>
-        <AppBar
-        className={classes.appbar}
-        elevation={0}
-        style={{ background: '#ffffff', color: "#000000"}}
-        >
-            <Toolbar>
-                <Typography>
-                    Opal 
-                </Typography>
-            </Toolbar>
-        </AppBar>
         <Drawer
         className={classes.drawer}
         variant="permanent"
