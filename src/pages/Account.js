@@ -1,10 +1,10 @@
 import React from "react";
 import TransactionList from "../components/TransactionList";
 
-function Account() {
+function Account({ search }) {
     return (
         <div>
-            <TransactionList />
+            <TransactionList search={search}/>
         </div>
     )
 }

@@ -153,6 +153,20 @@
       "amount": "1559",
       "category": "Food",
       "id": 22
+    },
+    {
+      "date": "2022-09-11T16:03:03.967Z",
+      "description": "Latte at Doppio",
+      "amount": "230",
+      "category": "Food",
+      "id": 23
+    },
+    {
+      "date": "2022-09-11T16:40:31.335Z",
+      "description": "Masala Chai at Doppio",
+      "amount": "180",
+      "category": "Food",
+      "id": 24
     }
   ]
 }

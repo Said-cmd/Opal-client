@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react'
 import Transaction from './Transaction'
 import { makeStyles } from "@material-ui/core"
 
-function TransactionList() {
-  const [transactions, setTransactions] = useState([])
+function TransactionList({ search }) {
+  const [transactions, setTransactions] = useState([]);
+
   const useStyles = makeStyles({
     table: {
       minWidth: 650,
@@ -21,7 +22,11 @@ function TransactionList() {
       .then(data => setTransactions(data))
   }, [])
 
-  const transactionList = transactions.map((transaction) => {
+  const filteredTransactions = transactions.filter((transaction) => {
+    return (transaction.description.toLowerCase().includes(search.toLowerCase()))
+  })
+
+  const transactionList = filteredTransactions.map((transaction) => {
     return <Transaction 
     key={transaction.id}
     date={transaction.date}

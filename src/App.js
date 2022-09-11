@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { createTheme, ThemeProvider } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
@@ -33,19 +33,21 @@ const theme = createTheme({
 })
 
 function App() {
+  const [search, setSearch] = useState('');
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Layout>
+        <Layout setSearch={setSearch}>
         <Switch>
       <Route exact path="/">
       <Login/>
       </Route>
       <Route exact path="/addtransaction">
-        <AddTransaction />
+        <AddTransaction/>
       </Route>
       <Route exact path="/account">
-        <Account />
+        <Account search={search}/>
       </Route>
         <Route exact path="/general">
           <General />

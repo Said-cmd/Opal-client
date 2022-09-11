@@ -106,12 +106,16 @@ const useStyles = makeStyles((theme) => {
   }
 }) 
 
-function Layout({ children }) {
+function Layout({ children, setSearch }) {
     const classes = useStyles()
     const history = useHistory()
     const location = useLocation()
     const [open, setOpen] = useState(true);
 
+    function handleSearch(e) {
+        setSearch(e.target.value)
+    }
+    
     const handleClick = () => {
         setOpen(!open);
     }
@@ -184,6 +188,7 @@ function Layout({ children }) {
                 <div className={classes.search}>
                     <InputBase
                     placeholder="Search"
+                    onChange={handleSearch}
                     classes={{
                         root: classes.inputRoot,
                         input: classes.inputInput,
@@ -191,6 +196,9 @@ function Layout({ children }) {
                     inputProps={{ 'aria-label': 'search' }}
                     />
                 </div>
+                <Typography>
+                    User
+                </Typography>
                 </Toolbar>
         </AppBar>
         <Drawer
