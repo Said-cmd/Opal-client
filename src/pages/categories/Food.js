@@ -21,9 +21,9 @@ function Food() {
       .then(data => setTransactions(data))
   }, [])
 
-  const filteredTransactions = transactions.filter((transaction) => transaction.category.toLowerCase().includes("food".toLowerCase()))
+  const categoryTransactions = transactions.filter((transaction) => transaction.category.toLowerCase().includes("food".toLowerCase()))
 
-  const transactionList = filteredTransactions.map((transaction) => {
+  const transactionList = categoryTransactions.map((transaction) => {
     return <Transaction 
     key={transaction.id}
     date={transaction.date}

@@ -196,9 +196,6 @@ function Layout({ children, setSearch }) {
                     inputProps={{ 'aria-label': 'search' }}
                     />
                 </div>
-                <Typography>
-                    User
-                </Typography>
                 </Toolbar>
         </AppBar>
         <Drawer
