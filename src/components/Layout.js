@@ -237,8 +237,8 @@ function Layout({ children, setSearch }) {
                     <ListIcon color="secondary" />
                 </ListItemIcon>
             <ListItemText primary="Transaction Categories">
-                    {open ? <ExpandLess /> : <ExpandMore />}
             </ListItemText>
+            <ListItemIcon>{open ? <Icon color='secondary' style={{ fontSize: 25, paddingLeft: 30}}><ExpandLess /></Icon> : <Icon color='secondary' style={{ fontSize: 25, paddingLeft: 30 }}><ExpandMore /></Icon>}</ListItemIcon>
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>

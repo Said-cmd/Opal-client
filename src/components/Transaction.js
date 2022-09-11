@@ -8,7 +8,6 @@ import CheckIcon from '@material-ui/icons/Check';
 
 function Transaction({ date, description, amount, category, id, transactions, setTransactions}) {
   const [edit, setEdit] = useState(false);
-  const [color, setColor] = useState('')
   const [obj, setObj] = useState({
     date: date,
     description: description,
