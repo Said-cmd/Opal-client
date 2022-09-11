@@ -56,7 +56,7 @@ function App() {
         <Route exact path="/food">
           <Food />
         </Route>
-        <Route exact path="/entertainment/leisure">
+        <Route exact path="/entertainment-leisure">
           <EntertainmentAndLeisure />
         </Route>
         <Route exact path="/savings">

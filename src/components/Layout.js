@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Collapse, makeStyles } from '@material-ui/core';
+import { Collapse, makeStyles, alpha } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { AddCircleOutlineOutlined, ExpandLess, ExpandMore, FullscreenExit } from '@material-ui/icons';
+import { AddCircleOutlineOutlined, ExpandLess, ExpandMore } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
 import ListIcon from '@material-ui/icons/List';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
@@ -21,7 +21,9 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import Avatar from '@material-ui/core/Avatar';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from "@material-ui/core/Button";
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import Icon from '@material-ui/core/Icon';
 
 const drawerWidth = 240
 
@@ -63,7 +65,44 @@ const useStyles = makeStyles((theme) => {
         width: `calc(100% - ${drawerWidth}px)`,
         background: "#ffffff",
         color: "#000000"
-      }
+      },
+      search: {
+        position: 'relative',
+        borderRadius: theme.shape.borderRadius,
+        backgroundColor: alpha(theme.palette.common.white, 0.15),
+        '&:hover': {
+          backgroundColor: alpha(theme.palette.common.white, 0.25),
+        },
+        marginRight: theme.spacing(2),
+        marginLeft: 0,
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+          marginLeft: theme.spacing(3),
+          width: 'auto',
+        },
+      },
+      searchIcon: {
+        padding: theme.spacing(0, 2),
+        height: '100%',
+        position: 'absolute',
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#000000'
+      },
+      inputRoot: {
+        color: 'inherit',
+        background: '#f9f9f9'
+      },
+      inputInput: {
+        padding: theme.spacing(1, 1, 1, 0),        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        transition: theme.transitions.create('width'),
+        width: '100%',
+        [theme.breakpoints.up('md')]: {
+          width: '30ch',
+        }
+    }
   }
 }) 
 
@@ -109,7 +148,7 @@ function Layout({ children }) {
         {
             text: "Entertainment and Leisure",
             icon: <SportsEsportsIcon color="secondary" style={{ fontSize: 20 }}/>,
-            path: "/entertainment/leisure"
+            path: "/entertainment-leisure"
         },
         {
             text: "Savings",
@@ -135,11 +174,23 @@ function Layout({ children }) {
 
   return (
     <div className={classes.root}>
-        <AppBar className={classes.appbar}>
+        <AppBar className={classes.appbar}
+        elevation={0}
+        >
             <Toolbar>
-                <Typography>
-                    Welcome to Opal
-                </Typography>
+                <Icon>
+                    <SearchIcon />
+                </Icon>
+                <div className={classes.search}>
+                    <InputBase
+                    placeholder="Search"
+                    classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput,
+                    }}
+                    inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
                 </Toolbar>
         </AppBar>
         <Drawer
@@ -209,4 +260,4 @@ function Layout({ children }) {
   )
 }
 
-export default Layout
+export default Layout;
