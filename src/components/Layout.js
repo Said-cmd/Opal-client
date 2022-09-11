@@ -6,7 +6,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { AddCircleOutlineOutlined, ExpandLess, ExpandMore } from '@material-ui/icons';
+import { AddCircleOutlineOutlined, ExpandLess, ExpandMore, FullscreenExit } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
 import ListIcon from '@material-ui/icons/List';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
@@ -18,6 +18,7 @@ import LocalFloristIcon from '@material-ui/icons/LocalFlorist';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import CommuteIcon from '@material-ui/icons/Commute';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
+import Avatar from '@material-ui/core/Avatar';
 
 const drawerWidth = 240
 
@@ -46,6 +47,11 @@ const useStyles = makeStyles((theme) => {
     toolbar: theme.mixins.toolbar,
     nested: {
         paddingLeft: theme.spacing(4),
+      },
+      brand : {
+        display: 'flex',
+        flexDirection: 'row',
+        padding: 0,
       }
   }
 }) 
@@ -125,12 +131,20 @@ function Layout({ children }) {
         classes={{ paper: classes.drawerPaper }}
         >
             <div>
+                <List className={classes.brand}>
                 <Typography
                 variant="h5"
                 className={classes.title}
                 >
-                    Opal
+                <Avatar src="/logo.png"/>
                 </Typography>
+                <Typography
+                variant="h4"
+                className={classes.title}
+                >
+                Opal
+                </Typography>
+                </List>
             </div>
             <List>
                 {sideBarItems.map(item => (
