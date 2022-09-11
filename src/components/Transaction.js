@@ -20,7 +20,7 @@ function Transaction({ date, description, amount, category, id, transactions, se
   }
 
   function handleInputUpdate(updatedData){
-    const updatedTransactions = transactions.map(transaction=>{
+    const updatedTransactions = transactions.map(transaction => {
       if (transaction.id === updatedData.id) {
         return updatedData;
       } else {
@@ -34,7 +34,7 @@ function Transaction({ date, description, amount, category, id, transactions, se
       let name = e.target.name
       let value = e.target.value
       setObj({
-        [name]: value
+        ...obj, [name]: value
       });
       console.log(obj)
   }
@@ -48,9 +48,9 @@ function Transaction({ date, description, amount, category, id, transactions, se
         body: JSON.stringify(obj),
     })
       .then((res) => res.json())
-      .then((transactions) => {
-        console.log(transactions)
-        handleInputUpdate(transactions)})
+      .then((updatedTransactions) => { 
+        console.log(updatedTransactions)
+        handleInputUpdate(updatedTransactions)})
   }
 
   function handleDeleteTransaction() {

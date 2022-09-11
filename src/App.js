@@ -5,7 +5,6 @@ import { red } from '@material-ui/core/colors';
 import Login from './pages/Login';
 import Account from "./pages/Account";
 import AddTransaction from "./pages/AddTransaction";
-import About from "./pages/About";
 import Layout from './components/Layout';
 import Bills from './pages/categories/Bills';
 import EntertainmentAndLeisure from './pages/categories/EntertainmentAndLeisure';
@@ -30,7 +29,7 @@ const theme = createTheme({
     fontWeightMedium: 600,
     fontWeightBold: 700,
     primary: "#000000"
-  }, 
+  }
 })
 
 function App() {
@@ -48,9 +47,6 @@ function App() {
       <Route exact path="/account">
         <Account />
       </Route>
-      <Route exact path="/about">
-        <About />
-        </Route>
         <Route exact path="/general">
           <General />
         </Route>

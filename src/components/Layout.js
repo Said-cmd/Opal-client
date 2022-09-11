@@ -19,6 +19,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import CommuteIcon from '@material-ui/icons/Commute';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import Avatar from '@material-ui/core/Avatar';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from "@material-ui/core/Button";
 
 const drawerWidth = 240
 
@@ -36,7 +39,10 @@ const useStyles = makeStyles((theme) => {
         width: drawerWidth
     },
     root: {
-        display: 'flex'
+        display: 'flex',
+    },
+    palette: {
+        textColor: "#000000"
     },
     active: {
         background: "#f8bbd0"
@@ -52,6 +58,11 @@ const useStyles = makeStyles((theme) => {
         display: 'flex',
         flexDirection: 'row',
         padding: 0,
+      },
+      appbar: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        background: "#ffffff",
+        color: "#000000"
       }
   }
 }) 
@@ -124,6 +135,13 @@ function Layout({ children }) {
 
   return (
     <div className={classes.root}>
+        <AppBar className={classes.appbar}>
+            <Toolbar>
+                <Typography>
+                    Welcome to Opal
+                </Typography>
+                </Toolbar>
+        </AppBar>
         <Drawer
         className={classes.drawer}
         variant="permanent"
