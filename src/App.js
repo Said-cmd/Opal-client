@@ -38,11 +38,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Layout setSearch={setSearch}>
-        <Switch>
+      <Switch>
       <Route exact path="/">
       <Login/>
       </Route>
+        <Layout setSearch={setSearch}>
       <Route exact path="/addtransaction">
         <AddTransaction/>
       </Route>
@@ -73,8 +73,8 @@ function App() {
         <Route exact path="/bills">
           <Bills />
         </Route>
-      </Switch>
       </Layout>
+      </Switch>
       </Router>
       </ThemeProvider>
   );

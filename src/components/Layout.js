@@ -25,8 +25,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Icon from '@material-ui/core/Icon';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import Tooltip from '@material-ui/core/Tooltip';
-import { red } from '@material-ui/core/colors';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const drawerWidth = 240
@@ -221,7 +219,7 @@ function Layout({ children, setSearch }) {
                 <List component="div" disablePadding>
                 <ListItem button className={classes.nested} 
                 onClick={() => {
-                    history.push("/login")
+                    history.push("/")
                     setUserIconOpen(!userIconOpen)
                     }}>
                     <ListItemIcon>
