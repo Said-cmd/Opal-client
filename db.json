@@ -1,165 +1,81 @@
 {
   "transactions": [
     {
+      "id": 1,
+      "date": "2019-12-01",
+      "description": "Paycheck from Bob's Burgers",
+      "amount": 1000,
+      "category": "Income"
+    },
+    {
       "id": 2,
-      "date": "07-01-2022",
+      "date": "2019-12-01",
       "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
+      "amount": -10.55,
+      "category": "Food"
     },
     {
       "id": 3,
-      "date": "11-01-2022",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
+      "date": "2019-12-02",
+      "description": "December's Rent",
+      "amount": -1020,
+      "category": "Bills"
     },
     {
       "id": 4,
-      "date": "14-01-2022",
+      "date": "2019-12-04",
       "description": "Sunglasses, Urban Outfitters",
-      "category": "Shopping",
-      "amount": -24.99
+      "amount": -24.99,
+      "category": "Shopping"
     },
     {
-      "id": 6,
-      "date": "06-02-2022",
-      "description": "Chipotle",
-      "category": "Food",
-      "amount": -17.59
+      "id": 5,
+      "date": "2019-12-06",
+      "description": "Venmo, Alice Pays you for Burrito",
+      "amount": 8.75,
+      "category": "Food"
     },
     {
       "id": 7,
-      "date": "10-02-2022",
+      "date": "2019-12-07",
       "description": "Birthday Check from Grandma",
-      "category": "General",
-      "amount": 50
+      "amount": 50,
+      "category": "General"
     },
     {
       "id": 8,
-      "date": "15-02-2022",
-      "description": "Lyft Ride",
-      "category": "Transport",
-      "amount": -13.25
+      "date": "2019-12-09",
+      "description": "Uber",
+      "amount": -13.25,
+      "category": "Transport"
     },
     {
       "id": 9,
-      "date": "17-02-2022",
+      "date": "2019-12-11",
       "description": "Paycheck from Bob's Burgers",
-      "category": "Income",
-      "amount": 1000
+      "amount": 1000,
+      "category": "Income"
     },
     {
       "id": 10,
-      "date": "20-05-2022",
+      "date": "2019-12-16",
       "description": "Tickets, Flatiron Multiplex Cinemas",
-      "category": "Entertainment/Leisure",
-      "amount": -24
+      "amount": -24,
+      "category": "Entertainment/Leisure"
     },
     {
       "id": 11,
-      "date": "09-09-2022",
+      "date": "2019-12-16",
       "description": "MTA Vending Machine: MetroCard",
-      "category": "Transport",
-      "amount": -116.39
+      "amount": "-116.39",
+      "category": "General"
     },
     {
-      "date": "2022-09-09T15:40:00.000Z",
-      "description": "Sprite at Doppio",
-      "amount": "100",
-      "category": "Food",
-      "id": 12
-    },
-    {
-      "date": "2022-09-09T15:40:47.260Z",
-      "description": "Tea at Doppio",
-      "amount": "180",
-      "category": "Food",
-      "id": 13
-    },
-    {
-      "date": "2022-09-09T16:01:08.559Z",
-      "description": "Coffee at Doppio",
-      "amount": "230",
-      "category": "Food",
-      "id": 14
-    },
-    {
-      "date": "2022-09-09T17:48:48.974Z",
-      "description": "Chai Latte at ArtCaffe",
-      "amount": "310",
-      "category": "Food",
-      "id": 15
-    },
-    {
-      "date": "2022-09-09T20:21:06.756Z",
-      "description": "Uber home from Kilileshwa",
-      "amount": "220",
-      "category": "Transport",
-      "id": 16
-    },
-    {
-      "date": "2022-09-10T15:33:55.495Z",
-      "description": "Money in Monzo pot",
-      "amount": "3000",
+      "date": "2022-09-12T22:47:28.341Z",
+      "description": "Savings for September",
+      "amount": "1000",
       "category": "Savings",
-      "id": 17
-    },
-    {
-      "date": "2022-09-10T16:02:28.766Z",
-      "description": "September's Rent",
-      "amount": "100,000",
-      "category": "Bills",
-      "id": 18
-    },
-    {
-      "date": "2022-09-10T16:08:47.689Z",
-      "description": "Cooking gas",
-      "amount": "250",
-      "category": "Bills",
-      "id": 19
-    },
-    {
-      "date": "2022-09-10T17:34:58.687Z",
-      "description": "Masala Chai at Doppio",
-      "amount": "180",
-      "category": "Food",
-      "id": 20
-    },
-    {
-      "date": "2022-09-08T06:46:00.000Z",
-      "description": "Radio Batteries",
-      "amount": "540",
-      "category": "Entertainment/Leisure",
-      "id": 21
-    },
-    {
-      "date": "2022-01-05T06:47:00.000Z",
-      "description": "Shopping from Simo",
-      "amount": "1559",
-      "category": "Food",
-      "id": 22
-    },
-    {
-      "date": "2022-09-11T16:03:03.967Z",
-      "description": "Latte at Doppio",
-      "amount": "230",
-      "category": "Food",
-      "id": 23
-    },
-    {
-      "date": "2022-09-11T16:40:31.335Z",
-      "description": "Masala Chai at Doppio",
-      "amount": "180",
-      "category": "Food",
-      "id": 24
-    },
-    {
-      "date": "2022-09-12T22:35:31.975Z",
-      "description": "Uber home",
-      "amount": "20.50",
-      "category": "Transport",
-      "id": 25
+      "id": 12
     }
   ]
 }
