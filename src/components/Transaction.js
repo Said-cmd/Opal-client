@@ -6,6 +6,7 @@ import CreateIcon from '@material-ui/icons/Create';
 import IconButton from '@material-ui/core/IconButton';
 import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function Transaction({ date, description, amount, category, id, transactions, setTransactions}) {
   const [edit, setEdit] = useState(false);
@@ -77,8 +78,10 @@ function Transaction({ date, description, amount, category, id, transactions, se
             <TableCell align="right" contentEditable={edit} onChange={handleChange} name={description} value={description}>{description}</TableCell>
             <TableCell align="right" contentEditable={edit} onChange={handleChange} name={amount} value={amount}>{amount}</TableCell>
             <TableCell align="right" contentEditable={edit} onChange={handleChange} name={category} value={category}>{category}</TableCell>
-            <TableCell align="right" onClick={handleEditTransaction}>{edit ? <IconButton onClick={handleUpdateTransaction}><CheckIcon /></IconButton> : <IconButton><CreateIcon /></IconButton>}</TableCell>
-            <TableCell align='right'>{edit ? <IconButton onClick={handleCancelUpdateTransaction}><ClearIcon /></IconButton> : <IconButton onClick={handleDeleteTransaction}><DeleteIcon /></IconButton>}</TableCell>
+            <TableRow>
+            <TableCell align="right" onClick={handleEditTransaction}>{edit ? <Tooltip title="Save"><IconButton onClick={handleUpdateTransaction}><CheckIcon /></IconButton></Tooltip> : <Tooltip title="Edit"><IconButton><CreateIcon /></IconButton></Tooltip>}</TableCell>
+            <TableCell align='right'>{edit ? <Tooltip title="Cancel"><IconButton onClick={handleCancelUpdateTransaction}><ClearIcon /></IconButton></Tooltip> : <Tooltip title="Delete"><IconButton onClick={handleDeleteTransaction}><DeleteIcon /></IconButton></Tooltip>}</TableCell>
+            </TableRow>
           </TableRow>
   );
 }
