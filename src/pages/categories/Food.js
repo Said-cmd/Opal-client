@@ -64,16 +64,10 @@ function Food() {
               Category
             </TableCell>
             <TableCell
-            align='right'
+            align='left'
             style={{ fontWeight: "bold"}}
             >
-              Update Transaction
-            </TableCell>
-            <TableCell
-            align='right'
-            style={{ fontWeight: "bold"}}
-            >
-              Delete Transaction
+              Edit Transaction
             </TableCell>
           </TableRow>
         {transactionList}

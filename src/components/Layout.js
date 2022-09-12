@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, makeStyles, alpha } from '@material-ui/core';
+import { Collapse, makeStyles, alpha, IconButton } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
 import List from "@material-ui/core/List";
@@ -24,6 +24,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Icon from '@material-ui/core/Icon';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Tooltip from '@material-ui/core/Tooltip';
+import { red } from '@material-ui/core/colors';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const drawerWidth = 240
 
@@ -68,6 +72,7 @@ const useStyles = makeStyles((theme) => {
       },
       search: {
         position: 'relative',
+        flexGrow: 1,
         borderRadius: theme.shape.borderRadius,
         backgroundColor: alpha(theme.palette.common.white, 0.15),
         '&:hover': {
@@ -101,6 +106,10 @@ const useStyles = makeStyles((theme) => {
         width: '100%',
         [theme.breakpoints.up('md')]: {
           width: '30ch',
+        },
+        avatar: {
+            marginLeft: theme.spacing(3),
+            backgroundColor: "#ff1744"
         }
     }
   }
@@ -111,13 +120,18 @@ function Layout({ children, setSearch }) {
     const history = useHistory()
     const location = useLocation()
     const [open, setOpen] = useState(true);
+    const [userIconOpen, setUserIconOpen] = useState(false)
 
     function handleSearch(e) {
         setSearch(e.target.value)
     }
     
-    const handleClick = () => {
+    const handleClickCategories = () => {
         setOpen(!open);
+    }
+
+    const handleClickProfile = () => {
+        setUserIconOpen(!userIconOpen);
     }
 
     const sideBarItems = [
@@ -196,7 +210,29 @@ function Layout({ children, setSearch }) {
                     inputProps={{ 'aria-label': 'search' }}
                     />
                 </div>
-                </Toolbar>
+               <List>
+               <ListItem button onClick={handleClickProfile}>
+                <ListItemIcon>
+                <AccountCircleIcon color="secondary"/>
+                </ListItemIcon>
+                <ListItemText primary="User" />
+            </ListItem>
+            <Collapse in={userIconOpen} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                <ListItem button className={classes.nested} 
+                onClick={() => {
+                    history.push("/login")
+                    setUserIconOpen(!userIconOpen)
+                    }}>
+                    <ListItemIcon>
+                    <ExitToAppIcon color="secondary"/>
+                    </ListItemIcon>
+                    <ListItemText primary="Logout" />
+                </ListItem>
+                </List>
+            </Collapse>
+               </List>
+               </Toolbar>
         </AppBar>
         <Drawer
         className={classes.drawer}
@@ -232,7 +268,7 @@ function Layout({ children, setSearch }) {
                     <ListItemText primary={item.text} />
                     </ListItem>
                 ))}
-            <ListItem button onClick={handleClick}>
+            <ListItem button onClick={handleClickCategories}>
                 <ListItemIcon>
                     <ListIcon color="secondary" />
                 </ListItemIcon>

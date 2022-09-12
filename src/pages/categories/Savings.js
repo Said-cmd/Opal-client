@@ -38,47 +38,41 @@ function Savings() {
 
   return (
     <Table className={classes.table} aria-label="simple table">
-      <TableBody>
-          <TableRow>
-            <TableCell
-            style={{ fontWeight: "bold"}}
-            >
-              Date
-            </TableCell>
-            <TableCell
-            align='right'
-            style={{ fontWeight: "bold"}}
-            >
-              Description
-            </TableCell>
-            <TableCell
-            align='right'
-            style={{ fontWeight: "bold"}}
-            >
-              Amount
-            </TableCell>
-            <TableCell
-            align='right'
-            style={{ fontWeight: "bold"}}
-            >
-              Category
-            </TableCell>
-            <TableCell
-            align='right'
-            style={{ fontWeight: "bold"}}
-            >
-              Update Transaction
-            </TableCell>
-            <TableCell
-            align='right'
-            style={{ fontWeight: "bold"}}
-            >
-              Delete Transaction
-            </TableCell>
-          </TableRow>
-        {transactionList}
-      </TableBody>
-    </Table>
+    <TableBody>
+        <TableRow>
+          <TableCell
+          style={{ fontWeight: "bold"}}
+          >
+            Date
+          </TableCell>
+          <TableCell
+          align='right'
+          style={{ fontWeight: "bold"}}
+          >
+            Description
+          </TableCell>
+          <TableCell
+          align='right'
+          style={{ fontWeight: "bold"}}
+          >
+            Amount
+          </TableCell>
+          <TableCell
+          align='right'
+          style={{ fontWeight: "bold"}}
+          >
+            Category
+          </TableCell>
+          <TableCell
+          align='left'
+          style={{ fontWeight: "bold"}}
+          >
+            Edit Transaction
+          </TableCell>
+        </TableRow>
+      {transactionList}
+    </TableBody>
+  </Table>
   )
 }
 
