@@ -5,6 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import CreateIcon from '@material-ui/icons/Create';
 import IconButton from '@material-ui/core/IconButton';
 import CheckIcon from '@material-ui/icons/Check';
+import ClearIcon from '@material-ui/icons/Clear';
 
 function Transaction({ date, description, amount, category, id, transactions, setTransactions}) {
   const [edit, setEdit] = useState(false);
@@ -16,6 +17,10 @@ function Transaction({ date, description, amount, category, id, transactions, se
   });
 
   function handleEditTransaction() {
+    setEdit((edit) => !edit)
+  }
+
+  function handleCancelUpdateTransaction() {
     setEdit((edit) => !edit)
   }
 
@@ -73,7 +78,7 @@ function Transaction({ date, description, amount, category, id, transactions, se
             <TableCell align="right" contentEditable={edit} onChange={handleChange} name={amount} value={amount}>{amount}</TableCell>
             <TableCell align="right" contentEditable={edit} onChange={handleChange} name={category} value={category}>{category}</TableCell>
             <TableCell align="right" onClick={handleEditTransaction}>{edit ? <IconButton onClick={handleUpdateTransaction}><CheckIcon /></IconButton> : <IconButton><CreateIcon /></IconButton>}</TableCell>
-            <TableCell align='right'>{<IconButton aria-label="delete" onClick={handleDeleteTransaction}><DeleteIcon /></IconButton>}</TableCell>
+            <TableCell align='right'>{edit ? <IconButton onClick={handleCancelUpdateTransaction}><ClearIcon /></IconButton> : <IconButton onClick={handleDeleteTransaction}><DeleteIcon /></IconButton>}</TableCell>
           </TableRow>
   );
 }
