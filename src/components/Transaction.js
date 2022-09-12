@@ -79,8 +79,8 @@ function Transaction({ date, description, amount, category, id, transactions, se
             <TableCell align="right" contentEditable={edit} onChange={handleChange} name={amount} value={amount}>{amount}</TableCell>
             <TableCell align="right" contentEditable={edit} onChange={handleChange} name={category} value={category}>{category}</TableCell>
             <TableRow>
-            <TableCell align="right" onClick={handleEditTransaction}>{edit ? <Tooltip title="Save"><IconButton onClick={handleUpdateTransaction}><CheckIcon /></IconButton></Tooltip> : <Tooltip title="Edit"><IconButton><CreateIcon /></IconButton></Tooltip>}</TableCell>
-            <TableCell align='right'>{edit ? <Tooltip title="Cancel"><IconButton onClick={handleCancelUpdateTransaction}><ClearIcon /></IconButton></Tooltip> : <Tooltip title="Delete"><IconButton onClick={handleDeleteTransaction}><DeleteIcon /></IconButton></Tooltip>}</TableCell>
+            <TableCell align="right" onClick={handleEditTransaction}>{edit ? <Tooltip title="Save"><IconButton onClick={handleUpdateTransaction}><CheckIcon color="secondary"/></IconButton></Tooltip> : <Tooltip title="Edit"><IconButton><CreateIcon color="secondary"/></IconButton></Tooltip>}</TableCell>
+            <TableCell align='right'>{edit ? <Tooltip title="Cancel"><IconButton onClick={handleCancelUpdateTransaction}><ClearIcon color="secondary"/></IconButton></Tooltip> : <Tooltip title="Delete"><IconButton onClick={handleDeleteTransaction}><DeleteIcon color="secondary"/></IconButton></Tooltip>}</TableCell>
             </TableRow>
           </TableRow>
   );

@@ -22,13 +22,6 @@
       "amount": -24.99
     },
     {
-      "id": 5,
-      "date": "25-01-2022",
-      "description": "M-PESA sent by Nelson",
-      "category": "General",
-      "amount": "5000"
-    },
-    {
       "id": 6,
       "date": "06-02-2022",
       "description": "Chipotle",
@@ -160,6 +153,13 @@
       "amount": "180",
       "category": "Food",
       "id": 24
+    },
+    {
+      "date": "2022-09-12T22:35:31.975Z",
+      "description": "Uber home",
+      "amount": "20.50",
+      "category": "Transport",
+      "id": 25
     }
   ]
 }

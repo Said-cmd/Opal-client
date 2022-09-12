@@ -1,1 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.home-container {
+    width: 3em;
+}
+
+.flex.column{
+    flex-flow: column wrap;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.padding-bottom{
+    padding-bottom: 2em;
+}
+
+.login-button.MuiButton-root{
+    min-width: 250px;
+    margin-bottom: 30%;
+}
