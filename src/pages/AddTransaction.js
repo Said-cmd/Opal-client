@@ -54,7 +54,7 @@ function AddTransaction() {
             setAmountError(true)
         }
         if (date && description && amount && category) {
-            fetch('http://localhost:8000/transactions', {
+            fetch('http://localhost:9292/transactions', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",

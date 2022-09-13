@@ -8,7 +8,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
 import Tooltip from '@material-ui/core/Tooltip';
 
-function Transaction({ date, description, amount, category, id, transactions, setTransactions}) {
+function Transaction({ date, description, amount, category, id, transaction, transactions, setTransactions}) {
   const [edit, setEdit] = useState(false);
   const [obj, setObj] = useState({
     date: date,
@@ -46,7 +46,7 @@ function Transaction({ date, description, amount, category, id, transactions, se
   }
 
   function handleUpdateTransaction() {
-    fetch(`http://localhost:8000/transactions/${id}`, {
+    fetch(`http://localhost:9292/transactions/${transaction.id}`, {
       method: "PATCH",
       headers: {
             "Content-Type" : "application/json"
@@ -60,7 +60,7 @@ function Transaction({ date, description, amount, category, id, transactions, se
   }
 
   function handleDeleteTransaction() {
-    fetch(`http://localhost:8000/transactions/${id}`, {
+    fetch(`http://localhost:9292/transactions/${transaction.id}`, {
       method: "DELETE"
     })
     .then((r) => r.json())

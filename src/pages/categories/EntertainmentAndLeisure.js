@@ -16,7 +16,7 @@ function EntertainmentAndLeisure() {
   const classes = useStyles();
   
   useEffect(() => {
-    fetch('http://localhost:8000/transactions')
+    fetch('http://localhost:9292/transactions')
       .then(res => res.json())
       .then(data => setTransactions(data))
   }, [])
