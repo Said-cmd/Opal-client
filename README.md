@@ -2,13 +2,13 @@
 ## By Said-cmd
 ## Description
 
-This project is a web application that allows users to have a note taking app on the web. Designed to mimic physical sticky notes, users can add notes, delete notes and search through their notes for specific entries. The notes are also ordered by date added which is automatically attached to footer of each note once it's generated. There's also a dark mode feature which allows the user to change the color of the site depending on their preference.
+This project is a web application that allows users to log and organise their transactions. Users can add transactions, update and delete transactions and search through their list of transactions for a specific one. The transactions are also sorted by category so that the user can see what they spend on each category.
 
 ## Features
 
 ### How to use the webpage 
 
-Once the page has fully loaded, navigate to the sticky note at the end of the list (which is in the darkest shade of blue with an add icon and an "Add a note...' placeholder). Type in whatever note it is you would like to enter and click the plus icon to add it to your list of notes. To delete any note simply, tap the delete icon (bin icon). And finally filter through your exisiting notes for a specific entry using the search bar at the top of the page. Toggle dark mode on and off depending on your preference by tapping the toggle icon at the top of the screen.
+Once the page has fully loaded the login page will pop up. Upon logging in you'll be programmatically redirected to your account. This is where you'll be able to view all your transactions. On the sidebar on the left you can click to view your transactions for a specific category or even use the search bar to find the exact transaction you're after. If you wish to add a transaction simply tap the add transaction button on the sidebar and fill in the fields with your transaction data. Once submitted you'll be redirected to you account where you can view or edit your recently added transaction.
 
 ### Users of the application will be able to:
 
@@ -35,10 +35,10 @@ Run the npm start to start up the site.
 
 Since we have a key of transactions poiting to an array of transaction entries, the Sinatra API will generate the following routes:
 
-* GET /transactions - when you load the site.
-* POST /transactions - whenever you add a new note.
-* PATCH /transactions/:id - whenever delete a note.
-* DELETE /transactions/:id - whenever delete a note.
+* GET /transactions - loads all transactions when you load the site.
+* POST /transactions - whenever you add a new transaction.
+* PATCH /transactions/:id - whenever you edit a transaction.
+* DELETE /transactions/:id - whenever you delete a transaction.
 
 ## Technologies Used
 
