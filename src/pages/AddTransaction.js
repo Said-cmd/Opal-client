@@ -108,6 +108,7 @@ function AddTransaction() {
             >
             </TextField>
             <TextField
+            type="number"
             className={classes.field}
             fullWidth
             label="Amount"
