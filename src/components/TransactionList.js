@@ -34,6 +34,7 @@ function TransactionList({ search }) {
     amount={transaction.amount}
     category={transaction.category}
     id={transaction.id}
+    transaction={transaction}
     transactions={transactions}
     setTransactions={setTransactions}
     />
