@@ -2,7 +2,7 @@
 ## By Said-cmd
 ## Front-end Opal Interface
 This repository holds the client-side of the app.
-This app is used in conjunction with my financial fransactions API [see the repo](https://github.com/Said-cmd/Opal-server)
+This app is used in conjunction with my financial fransactions API [see the repo](https://github.com/Said-cmd/Opal-server).
 ## Description
 
 This project is a web application that allows users to log and organise their transactions. Users can add transactions, update and delete transactions and search through their list of transactions for a specific one. The transactions are also sorted by category so that the user can see what they spend on each category.
