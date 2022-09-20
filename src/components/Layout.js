@@ -26,6 +26,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Icon from '@material-ui/core/Icon';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 
 const drawerWidth = 240
 
@@ -142,7 +143,12 @@ function Layout({ children, setSearch }) {
             text: "Add Transaction",
             icon: <AddCircleOutlineOutlined color="secondary" />,
             path: "/addtransaction"
-        }, 
+        },
+        {
+            text: "Transaction Wheel",
+            icon: <DonutLargeIcon color="secondary" />,
+            path: "/transaction-wheel"
+        } 
     ]
 
     const transactionCategories = [

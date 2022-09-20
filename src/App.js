@@ -14,6 +14,7 @@ import Income from './pages/categories/Income';
 import Savings from './pages/categories/Savings';
 import Shopping from './pages/categories/Shopping';
 import Transport from './pages/categories/Transport';
+import TransactionWheel from './pages/TransactionWheel';
 
 const theme = createTheme({
   palette: {
@@ -49,6 +50,9 @@ function App() {
       <Route exact path="/account">
         <Account search={search}/>
       </Route>
+      <Route exact path="/transaction-wheel">
+          <TransactionWheel />
+        </Route>
         <Route exact path="/general">
           <General />
         </Route>
