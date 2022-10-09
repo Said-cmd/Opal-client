@@ -16,7 +16,7 @@ function Income() {
   const classes = useStyles();
   
   useEffect(() => {
-    fetch('http://localhost:9292/transactions')
+    fetch('https://opal-finance.herokuapp.com/transactions')
       .then(res => res.json())
       .then(data => setTransactions(data))
   }, [])

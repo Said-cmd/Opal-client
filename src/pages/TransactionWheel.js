@@ -10,7 +10,7 @@ Chart.register(
 function TransactionWheel() {
   const [chart, setChart] = useState([])
 
-  const baseURL = "http://localhost:9292/transactions"
+  const baseURL = "https://opal-finance.herokuapp.com/transactions"
 
   useEffect(() => {
     const fetchCategories = async () => {

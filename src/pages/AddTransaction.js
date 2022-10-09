@@ -54,7 +54,7 @@ function AddTransaction() {
             setAmountError(true)
         }
         if (date && description && amount && category) {
-            fetch('http://localhost:9292/transactions', {
+            fetch('https://opal-finance.herokuapp.com/transactions', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
