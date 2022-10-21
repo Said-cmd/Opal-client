@@ -60,7 +60,7 @@ function Transaction({ date, description, amount, category, id, transaction, tra
   }
 
   function handleDeleteTransaction() {
-    fetch(`http://localhost:9292/transactions/${transaction.id}`, {
+    fetch(`https://opal-finance.herokuapp.com/transactions/${transaction.id}`, {
       method: "DELETE"
     })
     .then((r) => r.json())
