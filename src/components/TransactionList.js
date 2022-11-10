@@ -3,9 +3,11 @@ import Table from '@material-ui/core/Table'
 import React, { useState, useEffect } from 'react'
 import Transaction from './Transaction'
 import { makeStyles } from "@material-ui/core"
+import { Skeleton } from '@material-ui/lab'
 
 function TransactionList({ search }) {
   const [transactions, setTransactions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const useStyles = makeStyles({
     table: {
@@ -17,9 +19,13 @@ function TransactionList({ search }) {
   const classes = useStyles();
   
   useEffect(() => {
+    setIsLoading(true)
     fetch('https://opal-finance.herokuapp.com/transactions')
       .then(res => res.json())
-      .then(data => setTransactions(data))
+      .then(data => {
+        setIsLoading(false)
+        setTransactions(data)
+      })
   }, [])
 
   const filteredTransactions = transactions.filter((transaction) => {
@@ -41,6 +47,49 @@ function TransactionList({ search }) {
   })
 
   return (
+    <>
+    {isLoading ? (
+      <>
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    </>
+    ) 
+    : 
+    (
+    <>
     <Table className={classes.table} aria-label="simple table">
       <TableBody>
           <TableRow>
@@ -77,6 +126,8 @@ function TransactionList({ search }) {
         {transactionList}
       </TableBody>
     </Table>
+    </>)}
+    </>
   )
 }
 

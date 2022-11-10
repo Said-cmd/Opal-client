@@ -12,6 +12,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import { useHistory } from "react-router-dom";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles({
     field: {
@@ -32,11 +33,14 @@ function AddTransaction() {
     const [descriptionError, setDescriptionError] = useState(false);
     const [categoryError, setCategoryError] = useState(false)
     const [amountError, setAmountError] = useState(false)
+    const [submitting, setSubmitting] = useState(false)
+
     const handleDateChange = (date) => {
         setDate(date);
       };    
     const handleSubmit = (e) => {
         e.preventDefault()
+        setSubmitting(true)
         setDateError(false)
         setDescriptionError(false)
         setCategoryError(false)
@@ -60,7 +64,10 @@ function AddTransaction() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ date, description, amount, category})
-            }).then(() => history.push('/account'))
+            }).then(() => { 
+                setSubmitting(false)
+                history.push('/account')
+            })
         }
     }
      return(
@@ -151,7 +158,7 @@ function AddTransaction() {
             variant="contained"
             color="secondary" 
             >
-                Submit
+            {submitting ? (<CircularProgress style={{ color: "#fff"}}/>) : "Submit"}
             </Button>
             </form>
         </Container>

@@ -28,8 +28,6 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 
-const drawerWidth = 240
-
 const useStyles = makeStyles((theme) => {
     return {
     page: {
@@ -38,10 +36,10 @@ const useStyles = makeStyles((theme) => {
         padding: theme.spacing(3)
     },
     drawer: {
-        width: drawerWidth
+        width: 240
     },
     drawerPaper: {
-        width: drawerWidth
+        width: 240
     },
     root: {
         display: 'flex',
@@ -65,7 +63,7 @@ const useStyles = makeStyles((theme) => {
         padding: 0,
       },
       appbar: {
-        width: `calc(100% - ${drawerWidth}px)`,
+        width: `calc(100% - ${240}px)`,
         background: "#ffffff",
         color: "#000000"
       },
